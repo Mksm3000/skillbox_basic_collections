@@ -1,6 +1,6 @@
 def get_input_parameters():
-    number = int(input('Введите число (N > 1): '))
-    if number < 1:
+    number = int(input('Введите число (N >= 1): '))
+    if number <= 0:
         print('Ошибка ввода. Попробуйте еще раз')
         get_input_parameters()
     else:
@@ -13,7 +13,7 @@ def display_result(odd_numbers):
 
 def get_odd_numbers(number):
     spisok = []
-    for i in range(1, number + 1):
+    for i in range (number + 1):
         if i % 2 != 0:
             spisok.append(i)
     return spisok
