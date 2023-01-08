@@ -1,48 +1,28 @@
 def get_input_parameters():
-    """
-    Получаем сдвиг и начальны список
-
-    :return: например: [3, [1, 4, -3, 0, 10]]
-    :rtype: List[int, List[int]]
-    """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
-    pass
-
+    shift = int(input('Сдвиг: '))
+    # number = int(input('Количество элементов в списке: '))
+    original_list = [1, 4, -3, 0, 10]
+    # print('Вводите элементы:')
+    # for num in range(number):
+    #     num = int(input())
+    #     original_list.append(num)
+    # print('Изначальный список:', original_list)
+    return shift, original_list
 
 def display_result(shifted_list):
-    """
-    Выводим получившиеся список
-
-    :param shifted_list: сдвинутый список, например: [5, 1, 2, 3, 4]
-    :type shifted_list: List[int]
-    """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
-    pass
+    print('Сдвинутый список:', shifted_list)
 
 
 def shift_list(shift, original_list):
-    """
-    Сдвигаем список на определённое количество элементов в право
-
-    :param shift: сдвиг: 3
-    :type shift: int
-    :param original_list: Исходный список: [1, 4, -3, 0, 10]
-    :type original_list: List[int]
-
-    :return: сдвинутый список, например: [5, 1, 2, 3, 4]
-    :rtype: List[int]
-    """
-    # TODO: в этой функции пишем логику сдвига списка вправо на shift элементов.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
-    pass
+    count = len(original_list)
+    shifted_list = []
+    for i, num in enumerate(original_list):
+        if i >= count - shift:
+            shifted_list.append(num)
+    for i, num in enumerate(original_list):
+        if i < count - shift:
+            shifted_list.append(num)
+    return shifted_list
 
 
 if __name__ == '__main__':
